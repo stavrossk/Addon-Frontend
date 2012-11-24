@@ -19,8 +19,8 @@ $newest = $db->get_results("SELECT * FROM addon WHERE id NOT LIKE '%script.modul
 $comment = $db->get_results("SELECT * FROM comment ORDER BY date DESC LIMIT 4"); 
 $random = $db->get_results("SELECT * FROM addon WHERE id NOT LIKE '%script.module%' AND id NOT LIKE '%metadata.common%' ORDER BY RAND() DESC LIMIT 3"); 
 $top5 = $db->get_results("SELECT *, COUNT( provider_name ) AS counttotal FROM addon GROUP BY provider_name ORDER BY counttotal DESC LIMIT 9");
-$detail = $db->get_results("SELECT * FROM addon WHERE id = '$type'");
-$commentaddon = $db->get_results("SELECT * FROM comment WHERE addonid = '$type' ORDER BY date DESC LIMIT 5");
+$detail = $db->get_results("SELECT * FROM addon WHERE id = '" . $db->escape($type) . "'");
+$commentaddon = $db->get_results("SELECT * FROM comment WHERE addonid = '" . $db->escape($type) . "' ORDER BY date DESC LIMIT 5");
 //  ##############  Finish Queries  ############### //
 
 ?>

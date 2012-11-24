@@ -22,13 +22,13 @@ $random = $db->get_results("SELECT * FROM addon WHERE id NOT LIKE '%script.modul
 $top5 = $db->get_results("SELECT *, COUNT( provider_name ) AS counttotal FROM addon GROUP BY provider_name ORDER BY counttotal DESC LIMIT 9");
 if ((isset($type))) 
 {
-$category = $db->get_results("SELECT * FROM addon WHERE id LIKE '%$type%' AND id NOT LIKE '%Common%' AND id NOT LIKE '%script.module%' ORDER BY downloads DESC");
-$count = $db->get_var("SELECT count(*) FROM addon WHERE id LIKE '%$type%' AND id NOT LIKE '%Common%' AND id NOT LIKE '%script.module%'");
+$category = $db->get_results("SELECT * FROM addon WHERE id LIKE '" . $db->escape($type) . "%' AND id NOT LIKE 'Common%' AND id NOT LIKE 'script.module%' ORDER BY downloads DESC");
+$count = $db->get_var("SELECT count(*) FROM addon WHERE id LIKE '" . $db->escape($type) . "%' AND id NOT LIKE 'Common%' AND id NOT LIKE 'script.module%'");
 }
 else if ((isset($author))) 
 {
-$category = $db->get_results("SELECT * FROM addon WHERE provider_name LIKE '%$author%' AND id NOT LIKE '%script.module%' ORDER BY downloads DESC");
-$count = $db->get_var("SELECT count(*) FROM addon WHERE provider_name LIKE '%$author%' AND id NOT LIKE '%script.module%'");
+$category = $db->get_results("SELECT * FROM addon WHERE provider_name LIKE '" . $db->escape($author) . "%' AND id NOT LIKE 'script.module%' ORDER BY downloads DESC");
+$count = $db->get_var("SELECT count(*) FROM addon WHERE provider_name LIKE '" . $db->escape($author) . "%' AND id NOT LIKE 'script.module%'");
 }
 
 
