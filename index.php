@@ -2,10 +2,9 @@
 
 <?php
 //  ##############   Include Files  ################ //
-	include "includes/ez_sql_core.php";
-    include "includes/ez_sql_mysql.php";
-    include "includes/db_connection.php";
-	include "includes/functions.php";
+	require_once("includes/configuration.php");
+	require_once("includes/db_connection.php");
+	require_once("includes/functions.php");
 //  ##############  Finish Includes  ############### //
 
 // ###############  Setup Queries    ############### //
