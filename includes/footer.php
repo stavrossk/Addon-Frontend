@@ -19,11 +19,11 @@
 			<div class="widget-container">
 				<h3>External Links</h3>
 				<ul>
-					<li><a href="www.Fanart.tv" title="February 2010">Fanart.tv</a></li>
-					<li><a href="www.TheAudioDB.com" title="April 2010">TheAudioDB.com</a></li>
-					<li><a href="www.TheGamesDB.net" title="January 2010">TheGamesDB.net</a></li>
-					<li><a href="www.TheMovieDB.org" title="July 2010">TheMovieDB.org</a></li>
-					<li><a href="www.TheTVDB.com" title="June 2010">TheTVDB.com</a></li>				
+					<li><a href="http://www.Fanart.tv" title="February 2010">Fanart.tv</a></li>
+					<li><a href="http://www.TheAudioDB.com" title="April 2010">TheAudioDB.com</a></li>
+					<li><a href="http://www.TheGamesDB.net" title="January 2010">TheGamesDB.net</a></li>
+					<li><a href="http://www.TheMovieDB.org" title="July 2010">TheMovieDB.org</a></li>
+					<li><a href="http://www.TheTVDB.com" title="June 2010">TheTVDB.com</a></li>				
 				</ul>
 			</div>
 			<!-- Start Third Collumn -->
@@ -32,7 +32,7 @@
 				<ul>
 					<li><a href="http://www.at-visions.com" title="At-Visons">At-Visons</a></li>
 					<li><a href="http://www.convar.com/default.htm?language=1" title="Convar">Convar</a></li>
-					<li><a href="http://www.pivosgroup.com/ title="Pivos">Pivos</a></li>
+					<li><a href="http://www.pivosgroup.com/" title="Pivos">Pivos</a></li>
 					<li><a href="http://www.wunderground.com/" title="WUnderground">Weather Underground</a></li>
 				</ul>
 			</div>
@@ -40,13 +40,13 @@
 			<div class="widget-container">
 			<h3>Feeds</h3>
 				<ul>
-					<li><a href="http://xbmcpreview.explainstuff.net/comments/feed" title="Comments RSS">Comments RSS</a></li>
+					<li><a href="http://xbmc.org/comments/feed/" title="Comments RSS">Comments RSS</a></li>
 					<li><a href="/rsslatest.php" title="Latest Add-On RSS">Latest Add-On RSS</a></li>
 					<li><a href="/rssnewest.php" title="Newst Add-On RSS">New Add-On RSS</a></li>
-					<li><a href="http://xbmcpreview.explainstuff.net/feed/ title="News RSS">News RSS</a></li>
+					<li><a href="http://xbmc.org/feed/" title="News RSS">News RSS</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="clear"></div>
 	</div>
-	<!-- End Footer Sidebar -->
+<!-- End Footer Sidebar -->
