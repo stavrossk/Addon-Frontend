@@ -9,7 +9,7 @@ $_SESSION['verify'] = $hash_md5;
 
 // Verification Image Background Selection
 
-$bgs = array("verify/1.png","verify/2.png","verify/3.png");
+$bgs = array("images/verify/1.png","images/verify/2.png","images/verify/3.png");
 $background = array_rand($bgs, 1);
 
 // Verification Image Variables
