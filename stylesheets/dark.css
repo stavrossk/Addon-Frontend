@@ -141,11 +141,29 @@ a:hover.comment-reply-link	{
 
 /* ========== STYLED ELEMENTS ========== */
 
-img:hover.pic	{
+a:hover .pic	{
 				background:#363a3e;
 				border:1px solid #0579af;
 				}
-				
+
+a .pic, a:hover .pic {
+	-webkit-transition: 
+		background 0.4s linear,
+		border 0.4s linear;
+	-moz-transition: 
+		background 0.4s linear,
+		border 0.4s linear
+	-o-transition: 
+		background 0.4s linear,
+		border 0.4s linear;
+	-ms-transition: 
+		background 0.4s linear,
+		border 0.4s linear;
+	transition: 
+		background 0.4s linear,
+		border 0.4s linear;
+}
+
 /* ---- Pagination ---- */
 
 .navigation a:hover,
