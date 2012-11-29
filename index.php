@@ -16,32 +16,17 @@ $content = <<<EOF
 				<h2>Categories</h2>
 				<p>Browse the the Add-On categories below</p>
 				
-				<table border="0" align="center"><tr>
-				<table cellspacing="26" class="transparenttable"> 
-					<tr><td align="center">Metadata</td>
-						<td align="center">Pictures</td>
-						<td align="center">Video</td>
-						<td align="center">Audio</td></tr>
-					<tr><td><a href='browse.php?t=metadata'><img src='images/mainicon-metadata.png'/></a></td>
-						<td><a href='browse.php?t=plugin.image'><img src='images/mainicon-picture.png'/></a></td>
-						<td><a href='browse.php?t=plugin.video'><img src='images/mainicon-video.png'/></a></td>
-						<td><a href='browse.php?t=plugin.audio'><img src='images/mainicon-music.png'/></a></td></tr>
-					<tr><td align="center">Games</td>
-						<td align="center">Programs</td>
-						<td align="center">Scripts</td>
-						<td align="center">Skins</td></tr>
-					<tr><td><a href='browse.php?t=plugin.games'><img src='images/mainicon-game.png'/></a></td>
-						<td><a href='browse.php?t=plugin.program'><img src='images/mainicon-program.png'/></a></td>
-						<td><a href='browse.php?t=script'><img src='images/mainicon-script.png'/></a></td>
-						<td><a href='browse.php?t=skin'><img src='images/mainicon-skin.png'/></a></td></tr>
-		 		 </table></tr>
-</table>
-	<table width="610" class="transparenttable">
-	  <tr>
-	    <td align="center">$totalcount Plugins found<br>
-		</td>
-      </tr>
-	</table>
+				<ul id="addonCategories"> 
+					<li><a href="browse.php?t=metadata"><span class="thumbnail"><img src="images/mainicon-metadata.png" class="pic" alt="XBMC Metadata Add-Ons" /></span><strong>Metadata</strong></a></li>
+					<li><a href="browse.php?t=plugin.image"><span class="thumbnail"><img src="images/mainicon-picture.png" class="pic" alt="XBMC Picture Add-Ons" /></span><strong>Pictures</strong></a></li>
+					<li><a href="browse.php?t=plugin.video"><span class="thumbnail"><img src="images/mainicon-video.png" class="pic" alt="XBMC Video Add-Ons" /></span><strong>Video</strong></a></li>
+					<li><a href="browse.php?t=plugin.audio"><span class="thumbnail"><img src="images/mainicon-music.png" class="pic" alt="XBMC Music Add-Ons" /></span><strong>Audio</strong></a></li>
+					<li><a href="browse.php?t=plugin.games"><span class="thumbnail"><img src="images/mainicon-game.png" class="pic" alt="XBMC Game Add-Ons" /></span><strong>Games</strong></a></li>
+					<li><a href="browse.php?t=plugin.program"><span class="thumbnail"><img src="images/mainicon-program.png" class="pic" alt="XBMC Program Add-Ons" /></span><strong>Programs</strong></a></li>
+					<li><a href="browse.php?t=script"><span class="thumbnail"><img src="images/mainicon-script.png" class="pic" alt="XBMC Script Add-Ons" /></span><strong>Scripts</strong></a></li>
+					<li><a href="browse.php?t=skin"><span class="thumbnail"><img src="images/mainicon-skin.png" class="pic" alt="XBMC Skins" /></span><strong>Skins</strong></a></li>
+				</ul>
+				<div class="resultCount">$totalcount Plugins found</div>
 EOF;
 
 $content .= getDisclaimer();

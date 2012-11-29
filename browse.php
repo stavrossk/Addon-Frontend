@@ -33,46 +33,22 @@ $page->addRootlineItem(array( 'url' => 'browse.php?t=' . $type . '&amp;a=' . $au
 	$content ='<h2>Browsing</h2>';
 	if ($type !== NULL || $author !== NULL)
 		$content .= '<p>' . htmlspecialchars($type . $author) . '</p>';
-
-	if (is_array($category) && count($category)) 
-	{
-		$content .= '
-				<table border="0" align="center"><tr>
-				<table cellspacing="28" class="transparenttable"> <tr>
-		';
+	if (is_array($category) && count($category)) 	{
 		$counter = 0;
+		$content .= '<ul id="addonList">';
 		foreach ($category as $categories)
 		{
 			$counter++;					
-			$content .= "<td>";
-			$content .= "<a href='details.php?t=".$categories->id."'><img src='http://mirrors.xbmc.org/addons/eden/$categories->id/icon.png' width='78' height='78' /></a><br>";
-			$content .= "<b>".substr($categories->name,0,16)."</b>";
-			$content .= "<br>".substr($categories->provider_name,0,17);
-			$content .= "<br /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' />";
-			$content .= "</td>";
-
-			if($counter % 4 == 0)
-			{
-				$content .= "</tr><tr>";
-			}
+			$content .= "<li>";
+			$content .= '<a href="details.php?t=' . $categories->id . '"><span class="thumbnail"><img src="http://mirrors.xbmc.org/addons/eden/' . $categories->id . '/icon.png" width="100%" alt="' . $categories->name . '" class="pic" /></span>';
+			$content .= "<strong>" . $categories->name ."</strong></a> ";
+			#echo '<span class="author">' . $categories->provider_name . '</span>';
+			#echo "<br /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' />";
+			$content .= "</li>";
 		}
-		$content .= "
-						</tr>
-		 		 </table></tr>
-</table>
-";
+		$content .= "</ul>";
 	}
-	$content .= '
-	<table width="610" class="transparenttable">
-	  <tr>
-	    <td align="center">' . $count . ' Plugins found<br>
-		
-		
-	
-		
-		</td>
-      </tr>
-	</table>';
+	$content .= '<div class="resultCount">' . $count . ' Plugins found</div>';
 
 $content .= getDisclaimer();
 $page->setContent($content);
