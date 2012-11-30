@@ -137,52 +137,6 @@ class PageRenderer {
 	}
 
 	/**
-	 * Renders the header section
-	 *
-	 * @return string The header as html
-	 */
-	protected function renderHeader() {
-		$view = new TemplateView();
-		$view->setTemplate('header');
-		return $view->render();
-	}
-
-	/**
-	 * Renders the footer section
-	 *
-	 * @return string The footer as html
-	 */
-	protected function renderFooter() {
-		$view = new TemplateView();
-		$view->setTemplate('footer');
-		return $view->render();
-	}
-
-	/**
-	 * Renders the sidebar section
-	 *
-	 * @return string The sidebar as html
-	 */
-	protected function renderSidebar() {
-		global $configuration;
-		$root = getcwd();
-		$templatePath = $root . DIRECTORY_SEPARATOR . $configuration['templatePath'] . DIRECTORY_SEPARATOR;
-		$templateFile = 'sidebar.php';
-/*
-		if (!is_file($templatePath . $templateFile)) return '';
-
-		// I know it's evil to use eval, but there is no other easy way atm.
-		return eval(file_get_contents($templatePath . $templateFile));
- */
- 		ob_flush();
- 		ob_start();
-		include($templatePath . $templateFile);
-		$output = ob_get_contents();
-		ob_end_clean();
-		return $output;
-	}
-
-	/**
 	 * Renders the final page output
 	 *
 	 * @return string The rendered page;
@@ -192,9 +146,6 @@ class PageRenderer {
 			'###PAGETITLE###' => $this->pageTitle,
 			'###BREADCRUMB###' => $this->renderBreadCrumb(),
 			'###CONTENT###' => $this->content,
-			'###SIDEBAR###' => $this->renderSidebar(),
-			'###HEADER###' => $this->renderHeader(),
-			'###FOOTER###' => $this->renderFooter()
 		);
 
 		$view = new TemplateView();
