@@ -166,7 +166,7 @@ class PageRenderer {
 	protected function renderSidebar() {
 		global $configuration;
 		$root = getcwd();
-		$templatePath = $root . '\\' . $configuration['templatePath'] . '\\';
+		$templatePath = $root . DIRECTORY_SEPARATOR . $configuration['templatePath'] . DIRECTORY_SEPARATOR;
 		$templateFile = 'sidebar.php';
 /*
 		if (!is_file($templatePath . $templateFile)) return '';

@@ -68,7 +68,7 @@ class TemplateView {
 		global $configuration;
 
 		$root = getcwd();
-		$templatePath = $root . '\\' . $configuration['templatePath'] . '\\';
+		$templatePath = $root . DIRECTORY_SEPARATOR . $configuration['templatePath'] . DIRECTORY_SEPARATOR;
 		$templateFile = $templateName . '.html';
 
 		if (!is_file($templatePath . $templateFile)) throw new Exception(sprintf('Template file &quot;%s&quot; not found in the template path', $templateFile) );

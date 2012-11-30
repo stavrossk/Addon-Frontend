@@ -8,7 +8,7 @@
 // The currently supported contexts are:
 // development		Used in the development environment
 // production		Used on the live website
-$context = @is_file(dirname( __FILE__ ) . '/developmentConfiguration.php') ? 'development' : 'production';
+$context = @is_file(dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'developmentConfiguration.php') ? 'development' : 'production';
 define('CONTEXT', $context);
 
 // The base configuration of the application

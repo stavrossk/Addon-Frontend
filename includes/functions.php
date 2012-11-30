@@ -18,4 +18,16 @@ function getDisclaimer() {
 	$view = new TemplateView();
 	return $view->render('disclaimer');
 }
+
+/**
+ * Will check for wrong directory separators and inject the ones returned by the DIRECTORY_SEPARATOR constant
+ * 
+ * @param string $pathName The path to sanitize
+ * @return string The sanitized path
+ */
+function sanitizeFilePath($pathName) {
+	if (!is_string($pathName)) throw new Exception('Can\'t sanitize value of type ' . gettype($pathName) . ' as pathName. String expected.');
+	if (!strlen($pathName)) return '';
+	return preg_replace('!(\\\\|/)+!is', DIRECTORY_SEPARATOR, $pathName);
+}
 ?>
