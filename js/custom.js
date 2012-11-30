@@ -1,44 +1,5 @@
 // Initial of dropdown menu
-		ddsmoothmenu.init({
-			mainmenuid: "menu", //menu DIV id
-			orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
-			classname: 'ddsmoothmenu', //class added to menu's outer DIV
-			//customtheme: ["#1c5a80", "#18374a"],
-			contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
-		})
-		
-// Autoalign
-		jQuery(document).ready(function() {
-			jQuery(".sb_wrapper").autoAlign(".widget-container", 55);
-			jQuery(".featured_boxes").autoAlign(".featured", 50);
-			jQuery(".services").autoAlign(".service_box", 50);
-			jQuery(".services2").autoAlign(".service_box", 50);
-			jQuery(".services3").autoAlign(".service_box", 0);
-			jQuery(".services4").autoAlign(".service_box", 0);
-		});
-		
-// watermark plugin
-		jQuery(function($){$("#s").Watermark("Search");});
-	
-// image fading plugin
-		$(document).ready(function() { 
-			$(".pic").css({
-					backgroundColor: "#fff",
-					borderColor: "#D5D5D5"
-				});
-			$(".pic").hover(function() {
-				$(this).stop().animate({
-					backgroundColor: "#666",
-					borderColor: "#333"
-					}, 300);
-				},function() {
-				$(this).stop().animate({
-					backgroundColor: "#fff",
-					borderColor: "#D5D5D5"
-					}, 500);
-			});
-		});
-		
+
 // tabs
 		$(document).ready(function() {
 		  $("#tabs").tabs({ fx: { height: 'toggle', opacity: 'toggle' } });
@@ -114,23 +75,7 @@
 			  adjustHeight: 'auto',
 			  useScaling: 'false'
 			}, function() {
-				jQuery(".pic").css({
-						backgroundColor: "#fff",
-						borderColor: "#D5D5D5"
-					});
-				jQuery(".pic").hover(function() {
-					jQuery(this).stop().animate({
-						backgroundColor: "#666",
-						borderColor: "#333"
-						}, 300);
-					},function() {
-					jQuery(this).stop().animate({
-						backgroundColor: "#fff",
-						borderColor: "#D5D5D5"
-						}, 500);
-				});
 				reloadPrettyPhoto();
-
 			});
 
 			return false;

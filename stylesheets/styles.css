@@ -1044,7 +1044,9 @@ a:hover.comment-reply-link	{text-decoration:none;}
 #f_sidebar .widget-container	{
 				width:120px;
 				float:left;
+				margin-right:47px;
 				}
+#f_sidebar .widget-container.last {margin-right:0}
 				
 #f_sidebar .widget-container .wpcf7 {
 				width:270px;
@@ -1814,3 +1816,6 @@ ol.ordered li p	{
 
 .addonLinks {clear:both; overflow:hidden; margin:2em 0; list-style:none; padding:0}
 .addonLinks li {width:23%; margin:0 1%; display:inline-block}
+
+
+h1, h2, h3, h4, h5, h6, .big_btn, a.big_btn, #f_sidebar h3, .error404, .s3sliderImage .title { font-family: 'MgOpen Modata', 'Source Sans Pro', 'Arial Narrow', Arial, Helvetica, sans-serif;}
