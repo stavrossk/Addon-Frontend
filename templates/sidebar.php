@@ -1,9 +1,4 @@
 <?php
-//  ##############   Include Files  ################ //
-	require_once("includes/configuration.php");
-	require_once("includes/db_connection.php");
-	require_once("includes/functions.php");
-//  ##############  Finish Includes  ############### //
 global $db;
 
 function renderAddonList(array $addons) {
