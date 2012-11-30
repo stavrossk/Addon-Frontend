@@ -4,6 +4,24 @@
 	require_once("includes/db_connection.php");
 	require_once("includes/functions.php");
 //  ##############  Finish Includes  ############### //
+global $db;
+
+function renderAddonList(array $addons) {
+	$output = '';
+	if (is_array($addons) && count($addons))
+	{
+		$output .= '<ul>';
+		foreach ($addons as $addon)
+		{
+			$output .= "<li><a href='details.php?t=".$addon->id."'>";
+			$output .= "<img src='http://mirrors.xbmc.org/addons/eden/$addon->id/icon.png' width='60' height='60' alt='$addon->name' class='pic alignleft' />";
+			$output .= "<b>$addon->name</b></a>";
+			$output .= "<span class='date'>".$addon->updated."</span>";
+			$output .= "</li>";
+		}
+		$output .= '</ul>';
+	}
+}
 ?>		<!-- Sidebar -->
 		<div id="sidebar">
 			<!-- Tabbed Box -->
@@ -19,41 +37,16 @@
 					<!-- Tab Container for menu with ID tabs-1 -->
 					<div class="tabs-inner" id="tabs-1">
 						<?php
-						global $db;
 						// Build the Recent Add-Ons right hand slider slider
 						$recent = $db->get_results("SELECT * FROM addon WHERE id NOT LIKE '%script.module%' ORDER BY updated DESC LIMIT 5");
-						if (is_array($recent) && count($recent))
-						{
-							echo '<ul>';
-							foreach ($recent as $recents)
-							{
-								echo "<li><a href='details.php?t=".$recents->id."'>";
-								echo "<img src='http://mirrors.xbmc.org/addons/eden/$recents->id/icon.png' width='60' height='60' alt='$recents->name' class='pic alignleft' />";
-								echo "<b>$recents->name</b></a>";
-								echo "<span class='date'>".$recents->updated."</span>";
-								echo "</li>";
-							}
-							echo '</ul>';
-						}
+						echo renderAddonList($recent);
 						?>
 					</div>
 					<!-- Tab Container for menu with ID tabs-2 -->
 					<div class="tabs-inner" id="tabs-2">
 						<?php
 						$newest = $db->get_results("SELECT * FROM addon WHERE id NOT LIKE '%script.module%' ORDER BY created DESC LIMIT 5");
-						if (is_array($newest) && count($newest))
-						{
-							echo '<ul>';
-							foreach ($newest as $newests)
-							{
-								echo "<li><a href='details.php?t=".$newests->id."'>";
-								echo "<img src='http://mirrors.xbmc.org/addons/eden/$newests->id/icon.png' width='60' height='60' alt='$newests->name' class='pic alignleft' />";
-								echo "<b>$newests->name</b></a>";
-								echo "<span class='date'>".$newests->created."</span>";
-								echo "</li>";
-							}
-							echo '</ul>';
-						}
+						echo renderAddonList($newest);
 						?>
 					</div>
 					<!-- Tab Container for menu with ID tabs-3 -->
@@ -68,19 +61,7 @@
 					//	}
 						// Build the Popular Add-Ons right hand slider slider
 						$popular = $db->get_results("SELECT * FROM addon WHERE id NOT LIKE '%Common%' ORDER BY downloads DESC LIMIT 5");
-						if (is_array($popular) && count($popular))
-						{
-							echo '<ul>';
-							foreach ($popular as $populars)
-							{
-								echo "<li><a href='details.php?t=".$populars->id."'>";
-								echo "<img src='http://mirrors.xbmc.org/addons/eden/$populars->id/icon.png' width='60' height='60' alt='$populars->name' class='pic alignleft' />";
-								echo "<b>$populars->name</b></a>";
-								echo "<span class='date'>".number_format($populars->downloads)."</span>";
-								echo "</li>";
-							}
-							echo '</ul>';
-						}
+						echo renderAddonList($popular);
 						?>
 					</div>
 				</div>
