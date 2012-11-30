@@ -21,6 +21,7 @@ function renderAddonList(array $addons) {
 		}
 		$output .= '</ul>';
 	}
+	return $output;
 }
 ?>		<!-- Sidebar -->
 		<div id="sidebar">
