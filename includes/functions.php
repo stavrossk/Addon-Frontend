@@ -14,5 +14,8 @@ return $status;
 }  
  
 
-
+function getDisclaimer() {
+	$view = new TemplateView();
+	return $view->render('disclaimer');
+}
 ?>

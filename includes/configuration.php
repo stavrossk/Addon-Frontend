@@ -25,7 +25,8 @@ $configuration = array(
 		'version' => 'eden',
 		'importUrl' => 'http://mirrors.xbmc.org/addons/eden/addons.xml',
 		'statsUrl' => 'http://mirrors.xbmc.org/addons/addons_simplestats.xml',
-	)
+	),
+	'templatePath' => 'templates',
 );
 
 
