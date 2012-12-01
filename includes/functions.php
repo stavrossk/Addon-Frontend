@@ -30,4 +30,11 @@ function sanitizeFilePath($pathName) {
 	if (!strlen($pathName)) return '';
 	return preg_replace('!(\\\\|/)+!is', DIRECTORY_SEPARATOR, $pathName);
 }
+
+function shutdown() {
+	global $db;
+	if (isset($db)) {
+		$db->disconnect();
+	}
+}
 ?>

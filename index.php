@@ -32,4 +32,5 @@ EOF;
 $content .= getDisclaimer();
 $page->setContent($content);
 echo $page->render();
+shutdown();
 ?>

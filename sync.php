@@ -118,4 +118,5 @@ $page = new PageRenderer();
 $page->setTemplate('pageNoSideColumn');
 $page->setContent($content);
 echo $page->render();
+shutdown();
 ?>

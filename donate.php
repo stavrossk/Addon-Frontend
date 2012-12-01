@@ -36,4 +36,5 @@ $page->setPageTitle('Donate to XBMC');
 $page->setTemplate('pageNoSideColumn');
 $page->setContent($content);
 echo $page->render();
+shutdown();
 ?>

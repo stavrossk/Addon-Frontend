@@ -53,4 +53,5 @@ $page->addRootlineItem(array( 'url' => 'browse.php?t=' . $type . '&amp;a=' . $au
 $content .= getDisclaimer();
 $page->setContent($content);
 echo $page->render();
+shutdown();
 ?>
