@@ -86,9 +86,12 @@ $page = new PageRenderer();
 							
 							// Create a thumbnail image (Has a problem with any images that don't exist)
 							   $image = new SimpleImage();
-							   $image->load('http://mirror.ox.ac.uk/sites/xbmc.org/addons/frodo/' . $id . '/icon.png');
-							   $image->resize(110,110);
-							   $image->save('images/addons/'. $id .'.png');
+							   @$image->load('http://mirror.ox.ac.uk/sites/xbmc.org/addons/frodo/' . $id . '/icon.png');
+							   @$image->resize(110,110);
+							   @$image->save('images/addons/iconthumb/'. $id .'.png');
+							   @$image->resize(256,256);
+							   @$image->save('images/addons/icon/'. $id .'.png');
+							   
 							
 							$log .= " <b>Exists:</b> <img src='images/icon_no.jpg' height='12' width='12'> (Created new!)";
 						}
