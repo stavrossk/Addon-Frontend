@@ -9,7 +9,7 @@ function renderAddonList(array $addons) {
 		foreach ($addons as $addon)
 		{
 			$output .= "<li><a href='details.php?t=".$addon->id."'>";
-			$output .= "<img src='http://mirrors.xbmc.org/addons/eden/$addon->id/icon.png' width='60' height='60' alt='$addon->name' class='pic alignleft' />";
+			$output .= "<img src='images/addons/iconthumb/$addon->id.png' width='60' height='60' alt='$addon->name' class='pic alignleft' />";
 			$output .= "<b>$addon->name</b></a>";
 			$output .= "<span class='date'>".$addon->updated."</span>";
 			$output .= "</li>";
@@ -77,7 +77,7 @@ function renderAddonList(array $addons) {
 							echo '<ul class="overview">';
 							foreach ($random as $randoms)
 							{
-								echo "<li><div class='thumb'><a href='details.php?t=".$randoms->id."'><img src='http://mirrors.xbmc.org/addons/eden/$randoms->id/icon.png' height='125' alt='$randoms->name' class='pic' /></a></div>";
+								echo "<li><div class='thumb'><a href='details.php?t=".$randoms->id."'><img src='images/addons/icon/$randoms->id.png' height='125' alt='$randoms->name' class='pic' /></a></div>";
 								echo "<h5>".substr($randoms->name,0,22)." by ".substr($randoms->provider_name,0,15)."</h5>";
 								echo "<p>".str_replace("[CR]","",substr($randoms->description,0,100))."...</p></li>";
 							}

@@ -84,13 +84,12 @@ $page = new PageRenderer();
 						{
 							$db->query("INSERT INTO addon (id, name, provider_name, version, description, created, updated) VALUES ('$id', '$name', '$provider_name','$version', '$description', NOW(), NOW())");
 							
-							// Create a thumbnail image (Has a problem with any images that don't exist)
+							// Create a thumbnail image
 							   $image = new SimpleImage();
-							   @$image->load('http://mirror.ox.ac.uk/sites/xbmc.org/addons/frodo/' . $id . '/icon.png');
+							   @$image->load('http://mirrors.xbmc.org/addons/frodo/' . $id . '/icon.png');
+							   @$image->save('images/addons/icon/'. $id .'.png');
 							   @$image->resize(110,110);
 							   @$image->save('images/addons/iconthumb/'. $id .'.png');
-							   @$image->resize(256,256);
-							   @$image->save('images/addons/icon/'. $id .'.png');
 							   
 							
 							$log .= " <b>Exists:</b> <img src='images/icon_no.jpg' height='12' width='12'> (Created new!)";

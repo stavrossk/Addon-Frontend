@@ -40,7 +40,7 @@ $page->addRootlineItem(array( 'url' => 'browse.php?t=' . $type . '&amp;a=' . $au
 		{
 			$counter++;					
 			$content .= "<li>";
-			$content .= '<a href="details.php?t=' . $categories->id . '"><span class="thumbnail"><img src="http://mirrors.xbmc.org/addons/eden/' . $categories->id . '/icon.png" width="100%" alt="' . $categories->name . '" class="pic" /></span>';
+			$content .= '<a href="details.php?t=' . $categories->id . '"><span class="thumbnail"><img src="images/addons/icon/' . $categories->id . '.png" width="100%" alt="' . $categories->name . '" class="pic" /></span>';
 			$content .= "<strong>" . $categories->name ."</strong></a> ";
 			#echo '<span class="author">' . $categories->provider_name . '</span>';
 			#echo "<br /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' />";
