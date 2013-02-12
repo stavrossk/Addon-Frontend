@@ -18,7 +18,8 @@ $page = new PageRenderer();
 				if (isset($xml->addon['id']))
 				{
 					$counter = 0;
-
+					
+					// Loop through each addon
 					foreach ($xml->addon as $addons) 
 					{
 						$counter++;
@@ -27,7 +28,7 @@ $page = new PageRenderer();
 						$log = "<b>ID: </b>".$addons['id']. " - ";
 						foreach ($addons->children() as $nodeName => $node) {
 							if ($nodeName == 'extension' && $node['point'] == 'xbmc.addon.metadata' && $node->children()) {
-								$log .= '| meta data found |';
+								$log .= "| <b>Metadata:</b> <img src='images/icon_yes.png' height='12' width='12'> |";
 								foreach ($node->children() as $subNodeName => $subNode) {
 									if ($subNodeName == 'description' 
 										&& ($subNode['lang'] == 'en' || !isset($subNode['lang']) ) )
@@ -49,6 +50,7 @@ $page = new PageRenderer();
 							}
 						}
 
+						// Set the individual variables for each add-on
 						$id = $addons['id'];
 						$name = $db->escape($addons['name']);
 						$provider_name = $db->escape($addons['provider-name']);
@@ -61,22 +63,26 @@ $page = new PageRenderer();
 						if (isset($check->id))
 						{
 							//Item exists
-							$log .= "match found ";
+							$log .= " <b>Exists:</b> <img src='images/icon_yes.png' height='12' width='12'> ";
 							//Check here to see if the addon needs to be updated
 							if ($check->version == $version)
 							{
-								$log .= "- versions the same";
+								$log .= " | <b>Version:</b> same";
 							// Update plugin here to new version number
 							}
+							
 							else
 							{
 								$db->query("UPDATE addon SET version = '$version', updated = NOW(), provider_name = '$provider_name', description = '$description' WHERE id = '$id'");
-								$log .= "<b>version updated</b>";
+								$log .= "<b>Version:</b> updated";
 							}
 						}
+						
+						// Add a new add-on if it doesn't exist
 						else if ($description != "")
 						{
 							$db->query("INSERT INTO addon (id, name, provider_name, version, description, created, updated) VALUES ('$id', '$name', '$provider_name','$version', '$description', NOW(), NOW())");
+							$log .= " <b>Exists:</b> <img src='images/icon_no.jpg' height='12' width='12'> (Created new!)";
 						}
 						else
 						{
