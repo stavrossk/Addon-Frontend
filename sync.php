@@ -4,6 +4,7 @@
 	require_once("includes/db_connection.php");
 	require_once("includes/functions.php");
 	require_once("includes/pageRenderer.php");
+	require_once('includes/SimpleImage.php');
 //  ##############  Finish Includes  ############### //
 
 $page = new PageRenderer();
@@ -82,6 +83,13 @@ $page = new PageRenderer();
 						else if ($description != "")
 						{
 							$db->query("INSERT INTO addon (id, name, provider_name, version, description, created, updated) VALUES ('$id', '$name', '$provider_name','$version', '$description', NOW(), NOW())");
+							
+							// Create a thumbnail image (Has a problem with any images that don't exist)
+							   $image = new SimpleImage();
+							   $image->load('http://mirror.ox.ac.uk/sites/xbmc.org/addons/frodo/' . $id . '/icon.png');
+							   $image->resize(110,110);
+							   $image->save('images/addons/'. $id .'.png');
+							
 							$log .= " <b>Exists:</b> <img src='images/icon_no.jpg' height='12' width='12'> (Created new!)";
 						}
 						else
