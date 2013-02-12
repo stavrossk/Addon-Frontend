@@ -25,7 +25,7 @@ $page = new PageRenderer();
 						$counter++;
 						$description = "";
 						$summary = "";
-						$log = "<b>ID: </b>".$addons['id']. " - ";
+						$log = "<b>ID: </b>".$addons['id']. " ";
 						foreach ($addons->children() as $nodeName => $node) {
 							if ($nodeName == 'extension' && $node['point'] == 'xbmc.addon.metadata' && $node->children()) {
 								$log .= "| <b>Metadata:</b> <img src='images/icon_yes.png' height='12' width='12'> |";
@@ -67,7 +67,7 @@ $page = new PageRenderer();
 							//Check here to see if the addon needs to be updated
 							if ($check->version == $version)
 							{
-								$log .= " | <b>Version:</b> same";
+								$log .= " | <b>Version:</b> no change";
 							// Update plugin here to new version number
 							}
 							
@@ -115,7 +115,7 @@ $page = new PageRenderer();
 						{
 							// To speed things up, don't check if the addon exists in the DB and then do the UPDATE query. If addon is not in DB, it won't update anything, but if it is, we saved 1 query per update
 							// Plugin was found update with the downloads.
-							if($db->query("UPDATE addon SET downloads = '$downloads' WHERE id = '" . $db->escape($addonId) . "'"))	$content .=  '<li>' . $addonId . " - " . $downloads . ' - <b> downloads updated</b></li>';
+							if($db->query("UPDATE addon SET downloads = '$downloads' WHERE id = '" . $db->escape($addonId) . "'"))	$content .=  '<li><b>ID</b>: ' . $addonId . " | <b>Downloads: </b> " . $downloads . ' </li>';
 						}
 					}
 					$content .=  '</ul>';
