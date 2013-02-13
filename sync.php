@@ -75,7 +75,7 @@ $page = new PageRenderer();
 							else
 							{
 								$db->query("UPDATE addon SET version = '$version', updated = NOW(), provider_name = '$provider_name', description = '$description' WHERE id = '$id'");
-								$log .= "<b>Version:</b> updated";
+								$log .= "<b>Version:</b> updated <img src='images/icon_screens.png' height='12' width='12'>";
 							}
 						}
 						
