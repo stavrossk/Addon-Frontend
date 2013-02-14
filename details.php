@@ -25,7 +25,7 @@ $content = '';
 		foreach ($detail as $details)
 		{
 			$content .= "<div id='addonDetail'><h2>$details->name ".$details->version."</h2>
-				<span class='thumbnail'><img src='images/addons/icon/$details->id.png' alt='$details->name' width='256' height='256' class='pic' /></span>
+				<span class='thumbnail'><img src='cache/images/icon/$details->id.png' alt='$details->name' width='256' height='256' class='pic' /></span>
 				<strong>Author:</strong> <a href='browse.php?a=".$details->provider_name."'>".$details->provider_name."</a>";
 			#$content .= "<br /><br /><strong>Rating:</strong> <img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' /><img src='images/star_full_off.png' width='14' height='14' />";
 			$content .= "<br /><br /><strong>Downloads:</strong> ".number_format($details->downloads);
